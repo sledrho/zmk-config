@@ -49,6 +49,6 @@
 	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
 	                 &kp K_PP &kp DEL &kp LGUI &lt SPACE &kp ESC       &kp RET  &kp BSPC  &kp TAB &kp BSPC &kp RALT
 			>;
-		}
+		};
 	};
 };
