@@ -60,11 +60,11 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  TAB  |        |     |      |      |      |                                       | PGUP  | HOME  |  UP   | END  |     |      |     
 // | CTRL/ESC |     |     |      |      |      |                                       | PGDWN |  LEFT |  DWN  | RGHT |     |      |     
-// | SHIFT |        |     |      |      |      | L SHIFT | L SHIFT |  |     |          |  PGUP | PGDWN |       |      |     | CTRL |
+// | SHIFT |        |     |      |      |      | L SHIFT | L SHIFT |  |     |          |       |       |       |      |     | CTRL |
 //                     | P/PS  | DEL  | GUI  |  LWR/SPACE  | ESC   |  | RET |  BSPC  | TAB  | DEL  | R-ALT |
 		    bindings =  <
-	&kp TAB   &trans &trans &trans &trans &trans                                                 &kp PG_UP &kp HOME &kp UP  &kp END &trans &trans &trans
-	&caps_word &trans &trans &trans &trans &trans                                                &kp PG_DWN &kp LEFT &kp DOWN  &kp RIGHT &trans   &trans 
+	&kp TAB &trans &trans &trans &trans &trans                                               &kp PG_UP &kp HOME &kp UP  &kp END &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                                &kp PG_DWN &kp LEFT &kp DOWN  &kp RIGHT &trans &trans 
 	&kp LSHFT &trans &trans &trans &trans &trans &trans  &trans        &kp LSHFT &kp LSHFT &trans &trans  &trans &trans &trans &kp RCTRL
 	                 &kp C_PP &kp DEL &kp LGUI &kp SPACE &kp ESC       &kp RET  &kp BSPC  &kp TAB &kp DEL &kp RALT
 			>;
