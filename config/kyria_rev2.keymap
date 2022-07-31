@@ -33,7 +33,7 @@
 	                 &kp LGUI &kp DEL &kp LGUI &lt SYMBOLS SPACE &kp ESC       &kp BSPC  &lt NAV RET  &kp TAB &kp RALT &kp RALT
 			>;
 
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 				
 		symbols_layer {
@@ -51,7 +51,7 @@
 	                 &kp C_PP &kp DEL &kp LGUI &kp SPACE &kp ESC       &kp RET  &kp BSPC  &kp TAB &kp DEL &kp RALT
 			>;
 			
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 		
 		nav_layer {
@@ -69,7 +69,7 @@
 	                 &kp C_PP &kp DEL &kp LGUI &kp SPACE &kp ESC       &kp RET  &kp BSPC  &kp TAB &kp DEL &kp RALT
 			>;
 			
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
 	};
