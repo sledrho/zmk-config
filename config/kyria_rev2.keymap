@@ -77,9 +77,9 @@ macros {
 // |SHIFT | OUT_USB |     |      |      |      | L SHIFT | L SHIFT |  |     |          |       |       |       |      |     | CTRL |
 //                     | P/PS  | DEL  | GUI  |  LWR/SPACE  | ESC   |  | RET |  BSPC  | TAB  | DEL  | R-ALT |
 		    bindings =  <
-	&kp TAB &kp BT_CLR &kp BT_NXT &trans &trans &trans                                               &kp PG_UP  &kp HOME &kp UP   &kp END   &trans &trans 
-	&mt LCTRL ESC &kp OUT_BLE &kp BT_PRV &trans &trans &trans                                         &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &trans 
-	&kp LSHFT &kp OUT_USB &trans &trans &trans &trans &trans  &trans       &trans  &trans &trans &trans  &trans &trans &trans &kp RCTRL
+	&kp TAB &bt BT_CLR &bt BT_NXT &trans &trans &trans                                               &kp PG_UP  &kp HOME &kp UP   &kp END   &trans &trans 
+	&mt LCTRL ESC &out OUT_BLE &bt BT_PRV &trans &trans &trans                                         &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &trans 
+	&kp LSHFT &out OUT_USB &trans &trans &trans &trans &trans  &trans       &trans  &trans &trans &trans  &trans &trans &trans &kp RCTRL
 	                 &kp C_PP &trans &kp LGUI &kp SPACE &kp ESC       &kp BSPC  &kp RET  &kp TAB &kp DEL &kp RALT
 			>;
 			
