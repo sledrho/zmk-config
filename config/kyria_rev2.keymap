@@ -6,6 +6,8 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
 #define SYMBOLS 1
@@ -41,7 +43,7 @@ macros {
 			bindings = <
 	&kp TAB   &kp Q &kp W &kp E &kp R &kp T                                                    &kp Y &kp U  &kp I &kp O   &kp P    &kp BSLH
 	&mt LCTRL ESC &kp A &kp S &kp D &kp F &kp G                                                &kp H &kp J  &kp K &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp DEL                   &kp LSHFT &kp RBKT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LBKT &kp DEL                   &kp LGUI &kp RBKT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
 	                 &kp LGUI &tmux_key &kp LGUI &lt SYMBOLS SPACE &kp ESC       &kp BSPC  &lt NAV RET  &kp TAB &kp RALT &kp RALT
 			>;
 
@@ -52,9 +54,9 @@ macros {
 
 // Base layer: SYMBOLS
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  |  1  |   2  |    3   |  4   |  5   |                                      |  6    |  7     |  8    |  9   |   0   |   \  |
+// |  TAB  |  1  |   2  |    3   |  4   |  5   |                                   |  6    |  7     |  8    |  9   |   0   |   \  |
 // | CAPSW | =/+ | -/_  |  (  |  )   |  GRAVE  |                                   |  #    |   *    |   £  |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  PIPE   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M     |  ,    |  .   |   /   | CTRL |
+// | SHIFT |    |  X  |  C   |  V   |  PIPE   | L SHIFT | L SHIFT |  | L SHIFT | L SHIFT |  N   |  M     |  ,    |  .   |   /   | CTRL |
 //                     | P/PS  | DEL  | GUI  |  LWR/SPACE  | ESC |  |   RET   |  BSPC  | TAB  | DEL    | R-ALT |
 		    bindings =  <
 	&kp TAB &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                              &kp N6 &kp N7  &kp N8 &kp N9 &kp N0 &kp BSLH
@@ -68,16 +70,16 @@ macros {
 		
 		nav_layer {
 
-// Base layer: NAV
+// Base layer: NAV & BTLE
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  |        |     |      |      |      |                                       | PGUP  | HOME  |  UP   | END  |     |      |     
-// | CTRL/ESC |     |     |      |      |      |                                       | PGDWN |  LEFT |  DWN  | RGHT |     |      |     
-// | SHIFT |        |     |      |      |      | L SHIFT | L SHIFT |  |     |          |       |       |       |      |     | CTRL |
+// |TAB   | BT_CLR |BT_NXT|      |      |      |                                       | PGUP  | HOME  |  UP   | END  |     |      |     
+// |CT/ESC| OUT_BLE |BT_PRV|  |      |      |                                          | PGDWN |  LEFT |  DWN  | RGHT |     |      |     
+// |SHIFT | OUT_USB |     |      |      |      | L SHIFT | L SHIFT |  |     |          |       |       |       |      |     | CTRL |
 //                     | P/PS  | DEL  | GUI  |  LWR/SPACE  | ESC   |  | RET |  BSPC  | TAB  | DEL  | R-ALT |
 		    bindings =  <
-	&kp TAB &trans &trans &trans &trans &trans                                               &kp PG_UP  &kp HOME &kp UP   &kp END   &trans &trans 
-	&mt LCTRL ESC &trans &trans &trans &trans &trans                                         &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &trans 
-	&kp LSHFT &trans &trans &trans &trans &trans &trans  &trans       &trans  &trans &trans &trans  &trans &trans &trans &kp RCTRL
+	&kp TAB &kp BT_CLR &kp BT_NXT &trans &trans &trans                                               &kp PG_UP  &kp HOME &kp UP   &kp END   &trans &trans 
+	&mt LCTRL ESC &kp OUT_BLE &kp BT_PRV &trans &trans &trans                                         &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &trans 
+	&kp LSHFT &kp OUT_USB &trans &trans &trans &trans &trans  &trans       &trans  &trans &trans &trans  &trans &trans &trans &kp RCTRL
 	                 &kp C_PP &trans &kp LGUI &kp SPACE &kp ESC       &kp BSPC  &kp RET  &kp TAB &kp DEL &kp RALT
 			>;
 			
