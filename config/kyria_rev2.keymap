@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define DEFAULT 0
 #define SYMBOLS 1
@@ -49,7 +50,7 @@ macros {
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
-				
+
 		symbols_layer {
 
 // Base layer: SYMBOLS
@@ -64,25 +65,25 @@ macros {
 	&kp LSHFT &kp Z &kp X &kp C &kp V &kp PIPE &kp LSHFT &kp LSHFT        &kp LSHFT &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
 	                 &kp C_PP &trans &kp LGUI &kp SPACE &kp ESC       &kp BSPC  &kp RET  &kp TAB &kp DEL &kp RALT
 			>;
-			
+
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
-		
+
 		nav_layer {
 
 // Base layer: NAV & BTLE
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |TAB   | BT_CLR |BT_NXT|      |      |      |                                       | PGUP  | HOME  |  UP   | END  |     |      |     
-// |CT/ESC| OUT_BLE |BT_PRV|  |      |      |                                          | PGDWN |  LEFT |  DWN  | RGHT |     |      |     
-// |SHIFT | OUT_USB |     |      |      |      | L SHIFT | L SHIFT |  |     |          |       |       |       |      |     | CTRL |
+// |TAB   | BT_CLR |BT_NXT|      |      |      |                                       | PGUP  | HOME  |  UP   | END  |     |      |
+// |CT/ESC| OUT_BLE |BT_PRV|  |      |      |                                          | PGDWN |  LEFT |  DWN  | RGHT |     |      |
+// |SHIFT | OUT_USB |     |      |      |      | L SHIFT | L SHIFT |  |     |          |       | MS LFT|MS RT  |      |     | CTRL |
 //                     | P/PS  | DEL  | GUI  |  LWR/SPACE  | ESC   |  | RET |  BSPC  | TAB  | DEL  | R-ALT |
 		    bindings =  <
-	&kp TAB &bt BT_CLR &bt BT_NXT &trans &trans &trans                                               &kp PG_UP  &kp HOME &kp UP   &kp END   &trans &trans 
-	&mt LCTRL ESC &out OUT_BLE &bt BT_PRV &trans &trans &trans                                         &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &trans 
-	&kp LSHFT &out OUT_USB &trans &trans &trans &trans &trans  &trans       &trans  &trans &trans &trans  &trans &trans &trans &kp RCTRL
+	&kp TAB &bt BT_CLR &bt BT_NXT &trans &trans &trans                                               &kp PG_UP  &kp HOME &kp UP   &kp END   &trans &trans
+	&mt LCTRL ESC &out OUT_BLE &bt BT_PRV &trans &trans &trans                                       &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &trans
+	&kp LSHFT &out OUT_USB &trans &trans &trans &trans &trans  &trans       &trans  &trans &trans &mmv MOVE_LEFT  &mmv MOVE_RIGHT &trans &trans &kp RCTRL
 	                 &kp C_PP &trans &kp LGUI &kp SPACE &kp ESC       &kp BSPC  &kp RET  &kp TAB &kp DEL &kp RALT
 			>;
-			
+
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
