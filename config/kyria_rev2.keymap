@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
+//#include <dt-bindings/zmk/mouse.h>
 
 #define DEFAULT 0
 #define SYMBOLS 1
@@ -30,7 +30,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-    }
+    };
     macros {
         tmux_key: tmux_key {
             label = "tmux_key";
@@ -52,15 +52,16 @@
 
 			bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                                                        ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
-	&kp TAB       &kp Q        &kp W        &kp E        &kp R        &kp T                                                                 &kp Y        &kp U        &kp I        &kp O        &kp P        &kp NUBS   
+    &kp TAB       &kp Q        &kp W        &kp E        &kp R        &kp T                                                                 &kp Y        &kp U        &kp I        &kp O        &kp P        &kp NUBS
 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                                        ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
     &kp ESC       &am LGUI A   &am LALT S   &am LCTRL D  &am LSHFT F  &kp G                                                                 &kp H        &am RSHFT J  &am RCTRL K  &am RALT L  &am RGUI SEMI &kp SQT                 
 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼─────────────┬────────────╮  ╭─────────────┬────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-    &kp LSHFT     &kp Z        &kp X        &kp C        &kp V        &kp B        &kp LBKT      &mo NUM         &none         &none        &kp  N       &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RCTRL                  
+    &kp LSHFT     &kp Z        &kp X        &kp C        &kp V        &kp B        &kp LBKT      &mo NUM         &none         &none        &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RCTRL                  
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
-                                            &kp LGUI     &tmux_key    &tmux_key  &lt SYMBOLS SPACE &kp DEL       &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
+                                            &kp LGUI     &tmux_key    &tmux_key  &lt SYMBOLS SPACE &kp DEL       &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT     &kp RALT                                          
 //                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
-        >;
+            >;
+
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
@@ -76,7 +77,7 @@
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
                                             &kp LGUI     &tmux_key    &kp LGUI     &kp SPACE     &kp LALT        &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
 //                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
-		>;
+            >;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
@@ -93,7 +94,7 @@
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
                                             &kp LGUI     &tmux_key    &kp LGUI     &kp SPACE     &kp LALT        &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
 //                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
-		>;
+            >;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
@@ -110,7 +111,7 @@
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
                                             &kp LGUI     &tmux_key    &kp LGUI     &kp SPACE     &kp LALT        &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
 //                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
-        >;
+            >;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
