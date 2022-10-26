@@ -12,7 +12,8 @@
 
 #define DEFAULT 0
 #define SYMBOLS 1
-#define NAV     2
+#define NUM     2
+#define NAV     3
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
@@ -41,17 +42,8 @@
             , <&macro_release &kp LCTRL>
             ;
         };
-        amethyst_key: amethyst_key {
-            label = "amethyst_key";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-            = <&macro_press &kp LALT >
-            , <&macro_tap &kp LSHFT >
-            , <&macro_release &kp LALT >
-            ;
-        };
     };
+
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -64,16 +56,17 @@
 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                                        ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
     &kp ESC       &am LGUI A   &am LALT S   &am LCTRL D  &am LSHFT F  &kp G                                                                 &kp H        &am RSHFT J  &am RCTRL K  &am RALT L  &am RGUI SEMI &kp SQT                 
 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼─────────────┬────────────╮  ╭─────────────┬────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-    &kp LSHFT     &kp Z        &kp X        &kp C        &kp V        &kp B        &kp LBKT      &kp DEL         &none         &none        &kp  N       &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RCTRL                  
+    &kp LSHFT     &kp Z        &kp X        &kp C        &kp V        &kp B        &kp LBKT      &mo NUM         &none         &none        &kp  N       &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RCTRL                  
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
-                                            &kp LGUI     &tmux_key    &kp LGUI   &lt SYMBOLS SPACE &kp LALT      &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
+                                            &kp LGUI     &tmux_key    &tmux_key  &lt SYMBOLS SPACE &kp DEL       &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
 //                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
-
+        >;
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		symbols_layer {
 
+            bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                                                        ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
 	&trans        &kp EXCL     &kp DQT      &kp HASH     &kp DOLLAR   &kp PRCNT                                                             &kp CARET    &kp AMPS     &kp STAR     &kp UNDER    &trans       &trans   
 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                                        ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
@@ -83,37 +76,41 @@
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
                                             &kp LGUI     &tmux_key    &kp LGUI     &kp SPACE     &kp LALT        &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
 //                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
+		>;
 
-// Base layer: SYMBOLS
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |  TAB  |  1  |   2  |    3   |  4   |  5   |                                   |  6    |  7     |  8    |  9   |   0   |   \  |
-// | CAPSW | =/+ | -/_  |  (  |  )   |  GRAVE  |                                   |  #    |   *    |   £  |  L   |   ;   |   '  |
-// | SHIFT |    |  X  |  C   |  V   |  PIPE   |     LBKT   | DEL |  | AMTHST | RBKT |  N   |  M     |  ,    |  .   |   /   | CTRL |
-//                     | P/PS  | DEL  | GUI  |  LWR/SPACE  | ESC |  |   RET   |  BSPC  | TAB  | DEL    | R-ALT |
-		    bindings =  <
-	&kp TAB &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                              &kp N6 &kp N7  &kp N8 &kp N9 &kp N0 &kp BSLH
-	&caps_word &kp EQUAL &kp MINUS &kp LPAR &kp RPAR &kp GRAVE                              &kp NON_US_HASH &kp STAR  &kp K &kp L   &kp SEMI &kp SQT
-	&kp LSHFT &kp Z &kp X &kp C &kp V &kp PIPE &trans &trans          &trans &trans &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp C_PP &trans &kp LGUI &kp SPACE &kp ESC       &kp BSPC  &kp RET  &kp TAB &kp DEL &kp RALT
-			>;
+			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+		};
+
+		num_layer {
+            
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                                                        ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
+    &trans        &none        &none        &none        &none        &none                                                                 &none        &kp N7       &kp N8       &kp N9       &none        &none      
+// ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                                        ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+    &trans        &none        &none        &none        &none        &none                                                                 &none        &kp N4       &kp N5       &kp N6       &none        &none                 
+// ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼─────────────┬────────────╮  ╭─────────────┬────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+    &trans        &none        &none        &none        &none        &none        &none         &none           &trans        &trans       &kp N0       &kp N1       &kp N2       &kp N3       &none        &trans                  
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
+                                            &kp LGUI     &tmux_key    &kp LGUI     &kp SPACE     &kp LALT        &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
+//                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
+		>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		nav_layer {
-
-// Base layer: NAV & BTLE
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |TAB   | BT_CLR |BT_NXT|      |      |      |                                       | PGUP  | HOME  |  UP   | END  |     |      |
-// |CT/ESC| OUT_BLE |BT_PRV|  |      |      |                                          | PGDWN |  LEFT |  DWN  | RGHT |     |      |
-// |SHIFT | OUT_USB |     |      |      |      | L SHIFT | L SHIFT |  |     |          |       | MS LFT|MS RT  |      |     | CTRL |
-//                     | P/PS  | DEL  | GUI  |  LWR/SPACE  | ESC   |  | RET |  BSPC  | TAB  | DEL  | R-ALT |
-		    bindings =  <
-	&kp TAB &bt BT_CLR &bt BT_NXT &trans &trans &trans                                               &kp PG_UP  &kp HOME &kp UP   &kp END   &trans &trans
-	&mt LCTRL ESC &out OUT_BLE &bt BT_PRV &trans &trans &trans                                       &kp PG_DN &kp LEFT &kp DOWN &kp RIGHT &trans &trans
-	&kp LSHFT &out OUT_USB &trans &trans &trans &trans &trans  &trans       &trans  &trans &trans &mmv MOVE_LEFT  &mmv MOVE_RIGHT &trans &trans &kp RCTRL
-	                 &kp C_PP &trans &kp LGUI &kp SPACE &kp ESC       &kp BSPC  &kp RET  &kp TAB &kp DEL &kp RALT
-			>;
+            
+            bindings = <
+// ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                                                        ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
+    &trans        &bt BT_SL 0  &bt BT_SL 1  &bt BT_SL 2  &bt BT_SL 2  &none                                                                 &kp HOME     &kp PG_UP    &kp PG_DN    &kp END      &kp INS      &none
+// ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                                        ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+    &trans        &none        &none        &none        &none        &none                                                                 &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &none        &none                 
+// ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼─────────────┬────────────╮  ╭─────────────┬────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+    &trans        &bt BT_CLR   &kp G        &kp RBRC     &kp RPAR     &kp RBK      &none         &kp DEL         &trans        &trans       &kp PIPE     &kp MINUS    &kp EQUAL    &kp PLUS      &kp FSLH    &trans                  
+// ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
+                                            &kp LGUI     &tmux_key    &kp LGUI     &kp SPACE     &kp LALT        &kp BSPC      &lt NAV RET  &tmux_key    &kp RALT      &kp RALT                                          
+//                                        ╰────────────┴────────────┴────────────┴─────────────┴────────────╯  ╰─────────────┴────────────┴────────────┴────────────┴────────────╯
+        >;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
 		};
