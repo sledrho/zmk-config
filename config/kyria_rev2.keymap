@@ -69,9 +69,9 @@
 
             bindings = <
 // ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮                                                        ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
-    &trans        &kp EXCL     &kp DQT      &kp NUHS     &kp DOLLAR   &kp PRCNT                                                            &kp CARET    &kp AMPS     &kp STAR     &kp UNDER    &trans       &trans   
+    &trans        &kp EXCL     &kp DQT      &kp HASH     &kp DOLLAR   &kp PRCNT                                                             &kp CARET    &kp AMPS     &kp STAR     &kp UNDER    &trans       &trans   
 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                                        ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-    &trans        &kp GRAVE    &kp TILDE    &kp LBRC     &kp LPAR     &kp LBKT                                                              &kp COLON    &none        &none        &none        &none        &kp SQT                 
+    &trans        &kp GRAVE    &kp TILDE    &kp LBRC     &kp LPAR     &kp LBKT                                                              &kp COLON    &kp AT       &none        &none        &none        &kp SQT                 
 // ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼─────────────┬────────────╮  ╭─────────────┬────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
     &trans        &kp LT       &kp GT       &kp RBRC     &kp RPAR     &kp RBKT      &trans       &trans          &trans        &trans       &kp PIPE     &kp MINUS    &kp EQUAL    &kp PLUS     &none        &trans          
 // ╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┼─────────────┼────────────┤  ├─────────────┼────────────┼────────────┼────────────┼────────────┴────────────┴────────────┴────────────╯
