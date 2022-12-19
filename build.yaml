@@ -20,6 +20,6 @@ include:
   - board: nice_nano_v2
     shield: settings_reset
   - board: nice_nano_v2
-    shield: corne_left
+    shield: splitkb_aurora_corne_left
   - board: nice_nano_v2
-    shield: corne_right
+    shield: splitkb_aurora_corne_right
